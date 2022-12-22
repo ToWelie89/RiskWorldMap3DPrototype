@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wael Yasmina Three.js boilerplate</title>
+
+    <script type="importmap">
+        {
+            "imports": {
+                "three/addons/": "../node_modules/three/examples/jsm/",
+                "three/examples/jsm/": "../node_modules/three/examples/jsm/",
+                "three": "../node_modules/three/build/three.module.js"
+            }
+        }
+    </script>
+
+    <style>
+        body {
+            margin: 0
+        }
+        #mapControls {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: white;
+            opacity: 0.3;
+            transition: opacity 500ms;
+        }
+        #mapControls:hover {
+            opacity: 1;
+        }
+        #mapControls div {
+            display: inline-block;
+        }
+
+        canvas {
+            cursor: default;
+        }
+        canvas.pointer {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div id="mapControls">
+        <!-- ROTATION -->
+        <div>
+            <p>
+                Camera rotation X <span id="currentValueCameraRotationX"></span>
+            </p>
+            <input type="range" min="1" max="360" value="24" class="slider" id="cameraRotationX">
+        </div>
+        <div>
+            <p>
+                Camera rotation Y <span id="currentValueCameraRotationY"></span>
+            </p>
+            <input type="range" min="1" max="360" value="0" class="slider" id="cameraRotationY">
+        </div>
+        <div>
+            <p>
+                Camera rotation Z <span id="currentValueCameraRotationZ"></span>
+            </p>
+            <input type="range" min="1" max="360" value="0" class="slider" id="cameraRotationZ">
+        </div>
+        <!-- LOCATION -->
+        <div>
+            <p>
+                Camera location X <span id="currentValueCameraLocationX"></span>
+            </p>
+            <input type="range" min="1" max="360" value="50" class="slider" id="cameraLocationX">
+        </div>
+        <div>
+            <p>
+                Camera location Y <span id="currentValueCameraLocationY"></span>
+            </p>
+            <input type="range" min="1" max="360" value="50" class="slider" id="cameraLocationY">
+        </div>
+        <div>
+            <p>
+                Camera location Z <span id="currentValueCameraLocationZ"></span>
+            </p>
+            <input type="range" min="1" max="360" value="50" class="slider" id="cameraLocationZ">
+        </div>
+    </div>
+    <div id="container"></div>
+    <script src="./src/js/scripts.js" type="module"></script>
+</body>
+</html>
